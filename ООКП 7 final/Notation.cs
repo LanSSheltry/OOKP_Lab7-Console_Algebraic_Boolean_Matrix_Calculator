@@ -11,11 +11,11 @@ namespace ООКП_7_final
         string after;
         const double e = Math.E;
         const double pi = Math.PI;
-        List<string> separated;
-        List<string> polnotation;
+        List<string> separated; //Символы/числовые значения по отдельности
+        List<string> polnotation; //separated, переведенный в обратную польскую запись
         public int selectedvariant;
 
-        protected string Format(List<char> letters, List<double> values, string expression, int var)
+        protected string Format(List<char> letters, List<double> values, string expression, int var) //Окончательное форматирование строки
         {
             after = "";
             selectedvariant = var;
@@ -52,7 +52,7 @@ namespace ООКП_7_final
 
 
         int doubint = 0;
-        protected List<string> StringToArr()
+        protected List<string> StringToArr() //Перевод строки в список строк
         {
             string cache = "";
             separated = new List<string>();
@@ -91,7 +91,7 @@ namespace ООКП_7_final
                 else
                 {
                     cache += after[i];
-                    if (cache.Contains(",") == true) doubint++;
+                    if (cache.Contains(",")) doubint++;
                 }
             }
             if (cache != "") separated.Add(cache);
@@ -99,9 +99,9 @@ namespace ООКП_7_final
             return separated;
         }
 
-        protected List<string> ConvertToPol()
+        protected List<string> ConvertToPol() //Конвертация в польскую нотацию
         {
-            polnotation = new List<string>();
+            polnotation = new List<string>(); 
             Stack<string> operations = new Stack<string>();
             for (int i = 0; i < separated.Count; i++)
             {
@@ -152,7 +152,7 @@ namespace ООКП_7_final
             return polnotation;
         }
 
-        protected string Count()
+        protected string Count() //Конечный метод для подсчета значения по входным параметрам
         {
             Stack<string> tmp = new Stack<string>();
             for (int i = 0; i < polnotation.Count; i++)

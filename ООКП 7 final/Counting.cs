@@ -8,7 +8,7 @@ namespace ООКП_7_final
 {
     class Counting
     {
-        public int GetPriorityAlg(string sym)
+        public int GetPriorityAlg(string sym) //Получение приоритета оператора
         {
             if (sym == "(" || sym == ")")
             {
@@ -32,13 +32,13 @@ namespace ООКП_7_final
             }
         }
 
-        public int IsUnary(char last, char curr)
+        public int IsUnary(char last, char curr) //Проверка на наличие символов на соседних позициях
         {
             if ((last == '(' || last == '/' || last == '*' || last == '+' || last == '-') & curr == '-') return 1;
             else return 0;
         }
 
-        public string Decider(string ad, string bd, string sym, int var, int doubint)
+        public string Decider(string ad, string bd, string sym, int var, int doubint) //Метод, передающий значения в заданный класс для вычисления
         {
             if (var == 1)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using static System.Console;
 
 namespace ООКП_7_final
@@ -19,7 +20,7 @@ namespace ООКП_7_final
             WriteLine("Для выхода введите 'exit'...");
             while (true)
             {
-                int variant = 0;
+                int variant;
                 WriteLine("\nВведите выражение, значение которого необходимо найти: ");
                 string expression = Convert.ToString(ReadLine());
                 if (expression.Contains('[')) variant = 3;
